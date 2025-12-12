@@ -143,6 +143,7 @@ Será um prazer cuidar de você! ✨</p>
         // Função para obter horários disponíveis por dia da semana (configuráveis pelo dono)
         function getAvailableTimes(date) {
             const availableTimesPerDay = JSON.parse(localStorage.getItem('availableTimesPerDay')) || {
+                'sunday': [],
                 'monday': ['06:00','18:00'],
                 'tuesday': ['06:00','18:00'],
                 'wednesday': ['06:00','18:00'],
@@ -150,7 +151,7 @@ Será um prazer cuidar de você! ✨</p>
                 'friday': ['06:00','18:00'],
                 'saturday': ['17:00', '19:00']
             };
-            const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
             const dayOfWeek = days[new Date(date).getDay()];
             return availableTimesPerDay[dayOfWeek] || [];
         }
@@ -326,4 +327,5 @@ Enviado pelo formulário do site.`;
 
 </body>
 </html>
+
 
