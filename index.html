@@ -5,102 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nails By Suzan Santos</title>
     <link rel="icon" type="image/jpg" href="img/favicon.ico">
-
     <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-
     <!-- CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="logo-header">
         <h1 class="logo-nails">Nails</h1>
         <p class="logo-by">BY SUZAN SANTOS</p>
         <p>Agende seu horário e veja nosso portfólio!</p>
     </header>
-
     <nav>
         <a href="portifolio.html">PORTÍFOLIO</a>
         <a href="#agendamento">AGENDAR HORÁRIO</a>
         <a href="https://wa.me/5513997305044?text= agendamento">CONTATO: (13) 99730-5044</a>
     </nav>
-
     <section class="info-section">
         <div class="info-box">
             <h3>SOBRE MIM</h3>
             <div class="divider"></div>
-            <p>Olá, amigas! Me chamo Suzan, sou Nail Designer apaixonada por cuidar das suas unhas com delicadeza e qualidade. Meu objetivo é oferecer um atendimento acolhedor e resultados duradouros.
-Será um prazer cuidar de você! ✨</p>
+            <p>Olá, amigas! Me chamo Suzan, sou Nail Designer apaixonada por cuidar das suas unhas com delicadeza e qualidade. Meu objetivo é oferecer um atendimento acolhedor e resultados duradouros. Será um prazer cuidar de você! ✨</p>
         </div>
-
         <div class="info-box">
             <h3>POLÍTICAS</h3>
             <div class="divider"></div>
-            <p>• Tolerância máxima de 10 minutos de atraso.<br>
-• Cancelamento ou reagendamento com no mínimo 12h de antecedência.<br>
-• Horários são reservados exclusivamente para cada cliente.</p>
+            <p>• Tolerância máxima de 10 minutos de atraso.<br> • Cancelamento ou reagendamento com no mínimo 12h de antecedência.<br> • Horários são reservados exclusivamente para cada cliente.</p>
         </div>
     </section>
-
     <section id="agendamento">
         <div class="button-group">
             <button id="btnSessao">Agendar Aplicação</button>
             <button id="btnManutencao">Agendar Manutenção</button>
         </div>
-
         <div id="formSessao" class="form-container active">
             <h3>Agendar Aplicação</h3>
             <form id="appointmentForm">
                 <label for="name">Nome:</label>
                 <input type="text" name="name" id="name" required>
-
                 <label for="phone">Telefone:</label>
                 <input type="tel" name="phone" id="phone" required>
-
                 <label for="date">Data:</label>
                 <select name="date" id="date" required>
                     <option value="">Selecione</option>
                 </select>
-
                 <label for="time">Horário:</label>
                 <select name="time" id="time" required>
                     <option value="">Selecione</option>
                 </select>
-
                 <label for="service">Serviço:</label>
                 <select name="service" id="service" required>
                     <option value="">Selecione</option>
                     <option value="Banho De Gel">Banho De Gel  R$80,00</option>
                     <option value="Gel Na Tips">Gel Na Tips  R$100,00</option>
                 </select>
-
                 <button type="submit">Agendar Aplicação</button>
             </form>
         </div>
-
         <div id="formManutencao" class="form-container">
             <h3>Agendar Manutenção</h3>
             <form id="maintenanceForm">
                 <label for="nameM">Nome:</label>
                 <input type="text" name="nameM" id="nameM" required>
-
                 <label for="phoneM">Telefone:</label>
                 <input type="tel" name="phoneM" id="phoneM" required>
-
                 <label for="lastDate">Data da Última Aplicação:</label>
                 <input type="date" name="lastDate" id="lastDate" required>
-
                 <label for="dateM">Data Desejada:</label>
                 <select name="dateM" id="dateM" required>
                     <option value="">Selecione</option>
                 </select>
-
                 <label for="timeM">Horário:</label>
                 <select name="timeM" id="timeM" required>
                     <option value="">Selecione</option>
                 </select>
-
                 <label for="maintenanceType">Tipo de Manutenção:</label>
                 <select name="maintenanceType" id="maintenanceType" required>
                     <option value="">Selecione</option>
@@ -110,14 +88,11 @@ Será um prazer cuidar de você! ✨</p>
                 <button type="submit">Agendar Manutenção</button>
             </form>
         </div>
-
         <p id="status"></p>
     </section>
-
     <footer id="contato">
         <p>&copy;  2025 Nails By Suzan Santos </p>
     </footer>
-
     <script type="module">
         function sendToWhatsApp(message) {
             const phone = "5513997305044";
@@ -139,6 +114,7 @@ Será um prazer cuidar de você! ✨</p>
         const nameM = document.getElementById("nameM");
         const phoneM = document.getElementById("phoneM");
         const maintenanceType = document.getElementById("maintenanceType");
+        const lastDate = document.getElementById("lastDate"); // Adicionado para referência no script
 
         const availableTimesPerDay = {
             sunday: [],
@@ -159,18 +135,12 @@ Será um prazer cuidar de você! ✨</p>
             for (let i = 0; i < 30; i++) {
                 const d = new Date(today);
                 d.setDate(today.getDate() + i);
-
                 // Pular domingos (getDay() === 0)
                 if (d.getDay() === 0) continue;
-
                 const year = d.getFullYear();
                 const month = String(d.getMonth() + 1).padStart(2, '0');
                 const day = String(d.getDate()).padStart(2, '0');
-
-                dates.push({
-                    value: `${year}-${month}-${day}`,
-                    text: d.toLocaleDateString('pt-BR')
-                });
+                dates.push({ value: `${year}-${month}-${day}`, text: d.toLocaleDateString('pt-BR') });
             }
             return dates;
         }
@@ -178,13 +148,11 @@ Será um prazer cuidar de você! ✨</p>
         async function updateDateOptions(dateSelect, timeSelect) {
             dateSelect.innerHTML = '<option value="">Selecione</option>';
             const dates = generateDates();
-
             for (const date of dates) {
                 const booked = await getBookedTimes(date.value);
                 const day = days[new Date(date.value).getDay()];
                 const available = availableTimesPerDay[day] || [];
                 const free = available.filter(t => !booked[t]);
-
                 if (free.length > 0) {
                     const option = document.createElement('option');
                     option.value = date.value;
@@ -198,11 +166,9 @@ Será um prazer cuidar de você! ✨</p>
             timeSelect.innerHTML = '<option value="">Selecione</option>';
             const date = dateSelect.value;
             if (!date) return;
-
             const booked = await getBookedTimes(date);
             const day = days[new Date(date).getDay()];
             const available = availableTimesPerDay[day] || [];
-
             available.forEach(time => {
                 if (!booked[time]) {
                     const opt = document.createElement('option');
@@ -213,6 +179,22 @@ Será um prazer cuidar de você! ✨</p>
             });
         }
 
+        // Adicionar event listeners para alternar entre formulários
+        const btnSessao = document.getElementById("btnSessao");
+        const btnManutencao = document.getElementById("btnManutencao");
+        const formSessao = document.getElementById("formSessao");
+        const formManutencao = document.getElementById("formManutencao");
+
+        btnSessao.addEventListener('click', () => {
+            formSessao.classList.add('active');
+            formManutencao.classList.remove('active');
+        });
+
+        btnManutencao.addEventListener('click', () => {
+            formManutencao.classList.add('active');
+            formSessao.classList.remove('active');
+        });
+
         date.addEventListener('change', () => updateTimeOptions(date, time));
         dateM.addEventListener('change', () => updateTimeOptions(dateM, timeM));
 
@@ -222,23 +204,8 @@ Será um prazer cuidar de você! ✨</p>
         appointmentForm.addEventListener('submit', async e => {
             e.preventDefault();
             try {
-                await saveAppointment(date.value, time.value, {
-                    name: name.value,
-                    phone: phone.value,
-                    service: service.value,
-                    type: 'aplicacao'
-                });
-
-                const msg = `
-✨ *NOVO AGENDAMENTO – APLICAÇÃO* ✨
-
-👤 Nome: ${name.value}
-📞 Telefone: ${phone.value}
-📅 Data: ${date.value}
-⏰ Horário: ${time.value}
-💅 Serviço: ${service.value}
-                `;
-
+                await saveAppointment(date.value, time.value, { name: name.value, phone: phone.value, service: service.value, type: 'aplicacao' });
+                const msg = ` ✨ *NOVO AGENDAMENTO – APLICAÇÃO* ✨ 👤 Nome: ${name.value} 📞 Telefone: ${phone.value} 📅 Data: ${date.value} ⏰ Horário: ${time.value} 💅 Serviço: ${service.value} `;
                 sendToWhatsApp(msg);
                 alert("Horário agendado com sucesso!");
                 location.reload();
@@ -250,24 +217,8 @@ Será um prazer cuidar de você! ✨</p>
         maintenanceForm.addEventListener('submit', async e => {
             e.preventDefault();
             try {
-                await saveAppointment(dateM.value, timeM.value, {
-                    name: nameM.value,
-                    phone: phoneM.value,
-                    service: maintenanceType.value,
-                    type: 'manutencao'
-                });
-
-                const msg = `
-🔧 *NOVO AGENDAMENTO – MANUTENÇÃO* 🔧
-
-👤 Nome: ${nameM.value}
-📞 Telefone: ${phoneM.value}
-📅 Data desejada: ${dateM.value}
-⏰ Horário: ${timeM.value}
-💅 Serviço: ${maintenanceType.value}
-📆 Última aplicação: ${lastDate.value}
-                `;
-
+                await saveAppointment(dateM.value, timeM.value, { name: nameM.value, phone: phoneM.value, service: maintenanceType.value, type: 'manutencao' });
+                const msg = ` 🔧 *NOVO AGENDAMENTO – MANUTENÇÃO* 🔧 👤 Nome: ${nameM.value} 📞 Telefone: ${phoneM.value} 📅 Data desejada: ${dateM.value} ⏰ Horário: ${timeM.value} 💅 Serviço: ${maintenanceType.value} 📆 Última aplicação: ${lastDate.value} `;
                 sendToWhatsApp(msg);
                 alert("Manutenção agendada com sucesso!");
                 location.reload();
@@ -278,6 +229,7 @@ Será um prazer cuidar de você! ✨</p>
     </script>
 </body>
 </html>
+
 
 
 
