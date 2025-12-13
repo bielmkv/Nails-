@@ -160,6 +160,9 @@ Será um prazer cuidar de você! ✨</p>
                 const d = new Date(today);
                 d.setDate(today.getDate() + i);
 
+                // Pular domingos (getDay() === 0)
+                if (d.getDay() === 0) continue;
+
                 const year = d.getFullYear();
                 const month = String(d.getMonth() + 1).padStart(2, '0');
                 const day = String(d.getDate()).padStart(2, '0');
@@ -275,6 +278,8 @@ Será um prazer cuidar de você! ✨</p>
     </script>
 </body>
 </html>
+
+
 
 
 
