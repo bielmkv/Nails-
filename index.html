@@ -205,7 +205,8 @@
             e.preventDefault();
             try {
                 await saveAppointment(date.value, time.value, { name: name.value, phone: phone.value, service: service.value, type: 'aplicacao' });
-                const msg = ` ✨ *NOVO AGENDAMENTO – APLICAÇÃO* ✨ 
+                const msg = ` 
+                ✨ *NOVO AGENDAMENTO – APLICAÇÃO* ✨ 
                 👤 Nome: ${name.value} 
                 📞 Telefone: ${phone.value} 
                 📅 Data: ${date.value} 
@@ -223,7 +224,8 @@
             e.preventDefault();
             try {
                 await saveAppointment(dateM.value, timeM.value, { name: nameM.value, phone: phoneM.value, service: maintenanceType.value, type: 'manutencao' });
-                const msg = ` 🔧 *NOVO AGENDAMENTO – MANUTENÇÃO* 🔧 
+                const msg = ` 
+                🔧 *NOVO AGENDAMENTO – MANUTENÇÃO* 🔧 
                 👤 Nome: ${nameM.value} 
                 📞 Telefone: ${phoneM.value} 
                 📅 Data desejada: ${dateM.value} 
@@ -240,6 +242,7 @@
     </script>
 </body>
 </html>
+
 
 
 
