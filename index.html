@@ -26,7 +26,6 @@
         <a href="https://wa.me/5513997305044?text= agendamento">CONTATO: (13) 99730-5044</a>
     </nav>
 
-    <!-- 🔥🔥 NOVA PARTE ADICIONADA AQUI (3 COLUNAS) -->
     <section class="info-section">
         <div class="info-box">
             <h3>SOBRE MIM</h3>
@@ -43,7 +42,6 @@ Será um prazer cuidar de você! ✨</p>
 • Horários são reservados exclusivamente para cada cliente.</p>
         </div>
     </section>
-    <!-- 🔥🔥 FIM DA NOVA PARTE -->
 
     <section id="agendamento">
         <div class="button-group">
@@ -51,7 +49,6 @@ Será um prazer cuidar de você! ✨</p>
             <button id="btnManutencao">Agendar Manutenção</button>
         </div>
 
-        <!-- Formulário para Agendar Sessão -->
         <div id="formSessao" class="form-container active">
             <h3>Agendar Aplicação</h3>
             <form id="appointmentForm">
@@ -82,7 +79,6 @@ Será um prazer cuidar de você! ✨</p>
             </form>
         </div>
 
-        <!-- Formulário para Agendar Manutenção -->
         <div id="formManutencao" class="form-container">
             <h3>Agendar Manutenção</h3>
             <form id="maintenanceForm">
@@ -122,7 +118,6 @@ Será um prazer cuidar de você! ✨</p>
         <p>&copy;  2025 Nails By Suzan Santos </p>
     </footer>
 
-    <!-- JS -->
     <script type="module">
         function sendToWhatsApp(message) {
             const phone = "5513997305044";
@@ -157,15 +152,20 @@ Será um prazer cuidar de você! ✨</p>
 
         const days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
 
-        // 🔹 Funções adicionadas 🔹
+        // 🔹 Funções atualizadas para data local 🔹
         function generateDates() {
             const dates = [];
             const today = new Date();
             for (let i = 0; i < 30; i++) {
                 const d = new Date(today);
                 d.setDate(today.getDate() + i);
+
+                const year = d.getFullYear();
+                const month = String(d.getMonth() + 1).padStart(2, '0');
+                const day = String(d.getDate()).padStart(2, '0');
+
                 dates.push({
-                    value: d.toISOString().split('T')[0],
+                    value: `${year}-${month}-${day}`,
                     text: d.toLocaleDateString('pt-BR')
                 });
             }
@@ -210,15 +210,12 @@ Será um prazer cuidar de você! ✨</p>
             });
         }
 
-        // Eventos
         date.addEventListener('change', () => updateTimeOptions(date, time));
         dateM.addEventListener('change', () => updateTimeOptions(dateM, timeM));
 
-        // Inicialização
         updateDateOptions(date, time);
         updateDateOptions(dateM, timeM);
 
-        // SUBMIT — Aplicação
         appointmentForm.addEventListener('submit', async e => {
             e.preventDefault();
             try {
@@ -247,7 +244,6 @@ Será um prazer cuidar de você! ✨</p>
             }
         });
 
-        // SUBMIT — Manutenção
         maintenanceForm.addEventListener('submit', async e => {
             e.preventDefault();
             try {
@@ -276,10 +272,11 @@ Será um prazer cuidar de você! ✨</p>
                 alert("Este horário já foi reservado.");
             }
         });
-
     </script>
 </body>
 </html>
+
+
 
 
 
