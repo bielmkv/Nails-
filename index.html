@@ -205,14 +205,14 @@
             e.preventDefault();
             try {
                 await saveAppointment(date.value, time.value, { name: name.value, phone: phone.value, service: service.value, type: 'aplicacao' });
-                const msg =
-                `✨ *NOVO AGENDAMENTO – APLICAÇÃO* ✨ 
-               
-                👤 Nome: ${name.value} 
-                📞 Telefone: ${phone.value} 
-                📅 Data: ${date.value} 
-                ⏰ Horário: ${time.value} 
-                💅 Serviço: ${service.value} `;
+               const msg =
+`✨ *NOVO AGENDAMENTO – APLICAÇÃO* ✨
+
+👤 Nome: ${name.value}
+📞 Telefone: ${phone.value}
+📅 Data: ${date.value}
+⏰ Horário: ${time.value}
+💅 Serviço: ${service.value}`;
                 sendToWhatsApp(msg);
                 alert("Horário agendado com sucesso!");
                 location.reload();
@@ -226,14 +226,14 @@
             try {
                 await saveAppointment(dateM.value, timeM.value, { name: nameM.value, phone: phoneM.value, service: maintenanceType.value, type: 'manutencao' });
                 const msg =
-                `🔧 *NOVO AGENDAMENTO – MANUTENÇÃO* 🔧 
-                
-                👤 Nome: ${nameM.value} 
-                📞 Telefone: ${phoneM.value} 
-                📅 Data desejada: ${dateM.value} 
-                ⏰ Horário: ${timeM.value} 
-                💅 Serviço: ${maintenanceType.value} 
-                📆 Última aplicação: ${lastDate.value} `;
+`🔧 *NOVO AGENDAMENTO – MANUTENÇÃO* 🔧
+
+👤 Nome: ${nameM.value}
+📞 Telefone: ${phoneM.value}
+📅 Data desejada: ${dateM.value}
+⏰ Horário: ${timeM.value}
+💅 Serviço: ${maintenanceType.value}
+📆 Última aplicação: ${lastDate.value}`;
                 sendToWhatsApp(msg);
                 alert("Manutenção agendada com sucesso!");
                 location.reload();
@@ -244,6 +244,7 @@
     </script>
 </body>
 </html>
+
 
 
 
