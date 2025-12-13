@@ -130,6 +130,12 @@ Será um prazer cuidar de você! ✨</p>
 
     <!-- JS -->
     <script type="module">
+        function sendToWhatsApp(message) {
+  const phone = "5513997305044"; // número da Suzan
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+
 import { getBookedTimes, saveAppointment } from "./firebase.js";
 
         // ELEMENTOS DO FORMULÁRIO
@@ -239,8 +245,20 @@ appointmentForm.addEventListener('submit', async e => {
       type: 'aplicacao'
     });
 
-    alert("Horário agendado com sucesso!");
-    location.reload();
+    const msg = `
+✨ *NOVO AGENDAMENTO – APLICAÇÃO* ✨
+
+👤 Nome: ${name.value}
+📞 Telefone: ${phone.value}
+📅 Data: ${date.value}
+⏰ Horário: ${time.value}
+💅 Serviço: ${service.value}
+`;
+
+sendToWhatsApp(msg);
+alert("Horário agendado com sucesso!");
+location.reload();
+
 
   } catch (err) {
     alert("Este horário já foi reservado.");
@@ -259,6 +277,18 @@ maintenanceForm.addEventListener('submit', async e => {
       type: 'manutencao'
     });
 
+    const msg = `
+🔧 *NOVO AGENDAMENTO – MANUTENÇÃO* 🔧
+
+👤 Nome: ${nameM.value}
+📞 Telefone: ${phoneM.value}
+📅 Data desejada: ${dateM.value}
+⏰ Horário: ${timeM.value}
+💅 Serviço: ${maintenanceType.value}
+📆 Última aplicação: ${lastDate.value}
+`;
+
+    sendToWhatsApp(msg);
     alert("Manutenção agendada com sucesso!");
     location.reload();
 
@@ -266,9 +296,12 @@ maintenanceForm.addEventListener('submit', async e => {
     alert("Este horário já foi reservado.");
   }
 });
+
+});
 </script>
 </body>
 </html>
+
 
 
 
