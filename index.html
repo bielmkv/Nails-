@@ -132,6 +132,25 @@ Será um prazer cuidar de você! ✨</p>
     <script type="module">
 import { getBookedTimes, saveAppointment } from "./firebase.js";
 
+        // ELEMENTOS DO FORMULÁRIO
+const date = document.getElementById("date");
+const time = document.getElementById("time");
+
+const dateM = document.getElementById("dateM");
+const timeM = document.getElementById("timeM");
+
+const appointmentForm = document.getElementById("appointmentForm");
+const maintenanceForm = document.getElementById("maintenanceForm");
+
+const name = document.getElementById("name");
+const phone = document.getElementById("phone");
+const service = document.getElementById("service");
+
+const nameM = document.getElementById("nameM");
+const phoneM = document.getElementById("phoneM");
+const maintenanceType = document.getElementById("maintenanceType");
+
+
 // Horários por dia (mantemos os seus)
 const availableTimesPerDay = {
   monday: ['06:00','18:00'],
@@ -250,6 +269,7 @@ maintenanceForm.addEventListener('submit', async e => {
 </script>
 </body>
 </html>
+
 
 
 
