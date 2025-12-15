@@ -5,95 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nails By Suzan Santos</title>
     <link rel="icon" type="image/jpg" href="img/favicon.ico">
-    <!-- Fontes -->
+
+    <!-- Fonte -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <!-- CSS externo -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="logo-header">
-        <h1 class="logo-nails">Nails</h1>
-        <p class="logo-by">BY SUZAN SANTOS</p>
-        <p>Agende seu horário e veja nosso portfólio!</p>
+
+    <!-- HEADER / HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="logo-nails">Nails</h1>
+            <p class="logo-by">BY SUZAN SANTOS</p>
+            <p class="hero-sub">Agende seu horário e veja nosso portfólio!</p>
+
+            <nav class="hero-nav">
+                <a href="portifolio.html">PORTFÓLIO</a>
+                <a href="#agendamento">AGENDAR HORÁRIO</a>
+                <a href="https://wa.me/5513997305044" target="_blank" class="hero-phone">
+    <svg viewBox="0 0 24 24" class="hero-icon">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+        19.79 19.79 0 0 1-8.63-3.07 
+        19.5 19.5 0 0 1-6-6 
+        19.79 19.79 0 0 1-3.07-8.67 
+        A2 2 0 0 1 4.11 2h3
+        a2 2 0 0 1 2 1.72 
+        12.84 12.84 0 0 0 .7 2.81 
+        2 2 0 0 1-.45 2.11L8.09 9.91
+        a16 16 0 0 0 6 6l1.27-1.27
+        a2 2 0 0 1 2.11-.45 
+        12.84 12.84 0 0 0 2.81.7
+        A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    (13) 99730-5044
+</a>
+
+            </nav>
+        </div>
     </header>
-    <nav>
-        <a href="portifolio.html">PORTÍFOLIO</a>
-        <a href="#agendamento">AGENDAR HORÁRIO</a>
-        <a href="https://wa.me/5513997305044?text= agendamento">CONTATO: (13) 99730-5044</a>
-    </nav>
+
+    <!-- SOBRE / POLÍTICAS -->
     <section class="info-section">
         <div class="info-box">
             <h3>SOBRE MIM</h3>
             <div class="divider"></div>
-            <p>Olá, amigas! Me chamo Suzan, sou Nail Designer apaixonada por cuidar das suas unhas com delicadeza e qualidade. Meu objetivo é oferecer um atendimento acolhedor e resultados duradouros. Será um prazer cuidar de você! ✨</p>
+            <p>
+                Olá, amigas! Me chamo Suzan, sou Nail Designer apaixonada por cuidar das suas unhas
+                com delicadeza e qualidade. Meu objetivo é oferecer um atendimento acolhedor
+                e resultados duradouros. Será um prazer cuidar de você! ✨
+            </p>
         </div>
+
         <div class="info-box">
             <h3>POLÍTICAS</h3>
             <div class="divider"></div>
-            <p>• Tolerância máxima de 10 minutos de atraso.<br> • Cancelamento ou reagendamento com no mínimo 12h de antecedência.<br> • Horários são reservados exclusivamente para cada cliente.</p>
+            <p>
+                • Tolerância máxima de 10 minutos de atraso.<br>
+                • Cancelamento ou reagendamento com no mínimo 12h de antecedência.<br>
+                • Horários são reservados exclusivamente para cada cliente.
+            </p>
         </div>
     </section>
+
+    <!-- SERVIÇOS -->
+    <section class="services">
+        <h2>Nossos Serviços</h2>
+        <span>Qualidade e cuidado em cada detalhe</span>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h4>Banho de Gel</h4>
+                <p>Fortalecimento e brilho duradouro para suas unhas naturais.</p>
+                <p class="price">Aplicação: <strong>R$ 80,00</strong></p>
+                <p class="price">Manutenção: <strong>R$ 60,00</strong></p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h4>Gel na Tips</h4>
+                <p>Alongamento elegante com acabamento perfeito e durável.</p>
+                <p class="price">Aplicação: <strong>R$ 100,00</strong></p>
+                <p class="price">Manutenção: <strong>R$ 85,00</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENDAMENTO -->
     <section id="agendamento">
+        <h2>Agende seu Horário</h2>
+
         <div class="button-group">
             <button id="btnSessao">Agendar Aplicação</button>
             <button id="btnManutencao">Agendar Manutenção</button>
         </div>
+
+        <!-- FORM APLICAÇÃO -->
         <div id="formSessao" class="form-container active">
             <h3>Agendar Aplicação</h3>
             <form id="appointmentForm">
-                <label for="name">Nome:</label>
-                <input type="text" name="name" id="name" required>
-                <label for="phone">Telefone:</label>
-                <input type="tel" name="phone" id="phone" required>
-                <label for="date">Data:</label>
-                <select name="date" id="date" required>
+                <label>Nome:</label>
+                <input type="text" id="name" required>
+
+                <label>Telefone:</label>
+                <input type="tel" id="phone" required>
+
+                <label>Data:</label>
+                <select id="date" required></select>
+
+                <label>Horário:</label>
+                <select id="time" required></select>
+
+                <label>Serviço:</label>
+                <select id="service" required>
                     <option value="">Selecione</option>
+                    <option value="Banho De Gel">Banho De Gel – R$80,00</option>
+                    <option value="Gel Na Tips">Gel Na Tips – R$100,00</option>
                 </select>
-                <label for="time">Horário:</label>
-                <select name="time" id="time" required>
-                    <option value="">Selecione</option>
-                </select>
-                <label for="service">Serviço:</label>
-                <select name="service" id="service" required>
-                    <option value="">Selecione</option>
-                    <option value="Banho De Gel">Banho De Gel  R$80,00</option>
-                    <option value="Gel Na Tips">Gel Na Tips  R$100,00</option>
-                </select>
+
                 <button type="submit">Agendar Aplicação</button>
             </form>
         </div>
+
+        <!-- FORM MANUTENÇÃO -->
         <div id="formManutencao" class="form-container">
             <h3>Agendar Manutenção</h3>
             <form id="maintenanceForm">
-                <label for="nameM">Nome:</label>
-                <input type="text" name="nameM" id="nameM" required>
-                <label for="phoneM">Telefone:</label>
-                <input type="tel" name="phoneM" id="phoneM" required>
-                <label for="lastDate">Data da Última Aplicação:</label>
-                <input type="date" name="lastDate" id="lastDate" required>
-                <label for="dateM">Data Desejada:</label>
-                <select name="dateM" id="dateM" required>
+                <label>Nome:</label>
+                <input type="text" id="nameM" required>
+
+                <label>Telefone:</label>
+                <input type="tel" id="phoneM" required>
+
+                <label>Última Aplicação:</label>
+                <input type="date" id="lastDate" required>
+
+                <label>Data desejada:</label>
+                <select id="dateM" required></select>
+
+                <label>Horário:</label>
+                <select id="timeM" required></select>
+
+                <label>Tipo de manutenção:</label>
+                <select id="maintenanceType" required>
                     <option value="">Selecione</option>
+                    <option value="Banho De Gel">Banho De Gel – R$60,00</option>
+                    <option value="Gel Na Tips">Gel Na Tips – R$85,00</option>
                 </select>
-                <label for="timeM">Horário:</label>
-                <select name="timeM" id="timeM" required>
-                    <option value="">Selecione</option>
-                </select>
-                <label for="maintenanceType">Tipo de Manutenção:</label>
-                <select name="maintenanceType" id="maintenanceType" required>
-                    <option value="">Selecione</option>
-                    <option value="Banho De Gel">Banho De Gel  R$60,00</option>
-                    <option value="Gel Na Tips">Gel Na Tips  R$85,00</option>
-                </select>
+
                 <button type="submit">Agendar Manutenção</button>
             </form>
         </div>
-        <p id="status"></p>
     </section>
-    <footer id="contato">
-        <p>&copy;  2025 Nails By Suzan Santos </p>
-    </footer>
-    <script type="module">
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <h2 class="footer-logo">Nails</h2>
+        <span class="footer-sub">BY SUZAN SANTOS</span>
+
+        <div class="footer-info">
+            <div class="footer-item">
+    <a href="https://wa.me/5513997305044" target="_blank">
+        <svg viewBox="0 0 24 24" class="footer-icon">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+            19.79 19.79 0 0 1-8.63-3.07 
+            19.5 19.5 0 0 1-6-6 
+            19.79 19.79 0 0 1-3.07-8.67 
+            A2 2 0 0 1 4.11 2h3
+            a2 2 0 0 1 2 1.72 
+            12.84 12.84 0 0 0 .7 2.81 
+            2 2 0 0 1-.45 2.11L8.09 9.91
+            a16 16 0 0 0 6 6l1.27-1.27
+            a2 2 0 0 1 2.11-.45 
+            12.84 12.84 0 0 0 2.81.7
+            A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <p>(13) 99730-5044</p>
+    </a>
+</div>
+
+
+            <div class="footer-item">
+    <a href="https://www.instagram.com/suzanszgnails_" target="_blank">
+        <svg viewBox="0 0 24 24" class="footer-icon">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8
+            4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        <p>@suzanszgnails_</p>
+    </a>
+</div>
+
+
+           <div class="footer-item">
+    <a href="" target="_blank">
+        <svg viewBox="0 0 24 24" class="footer-icon">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13
+            a9 9 0 1 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <p>Praia Grande, SP</p>
+    </a>
+</div>
+
+        </div>
+
+        <div class="footer-line"></div>
+
+        <p class="footer-copy">
+            © 2025 Nails By Suzan Santos. Todos os direitos reservados.
+        </p>
+    </div>
+</footer>
+
+
+    <!-- SCRIPT -->
+     <script type="module">
         function sendToWhatsApp(message) {
             const phone = "5513997305044";
             const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -244,27 +375,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
