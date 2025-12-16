@@ -18,7 +18,7 @@ body {
 ===================== */
 .hero {
   min-height: 18vh; /* hero menor */
-  background: linear-gradient(90deg, #9c9c9c, #696969);
+  background: linear-gradient(90deg, #9c9c9c, #7f7f7f);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,7 +244,7 @@ body {
   padding: 14px 28px;
   border-radius: 30px;
   border: 1px solid #ccc;
-  background: linear-gradient(90deg, #666, #696969); /* Nova cor rosa para combinar com tema de manicure */
+  background: linear-gradient(90deg, #666, #111); /* Nova cor rosa para combinar com tema de manicure */
   color: #fff; /* Texto branco para contraste */
   cursor: pointer;
   font-size: 15px;
@@ -308,7 +308,7 @@ form button {
   padding: 18px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(90deg, #666, #696969);
+  background: linear-gradient(90deg, #666, #111);
   color: #fff;
   font-size: 15.5px;
   cursor: pointer;
